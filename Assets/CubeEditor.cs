@@ -28,7 +28,9 @@ public class CubeEditor : MonoBehaviour
 
     private void PrintLabel(float x, float y)
     {
-        textMesh.text = x/gridSize + ", " + y/gridSize;
+        var labelText = x/gridSize + ", " + y/gridSize;
+        textMesh.text = labelText;
+        gameObject.name = labelText;
     }
 
     private void Start()
