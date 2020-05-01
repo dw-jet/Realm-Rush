@@ -62,6 +62,7 @@
      <Compile Include="Assets\EnemyMover.cs" />
      <Compile Include="Assets\Pathfinder.cs" />
      <Compile Include="Assets\Waypoint.cs" />
+     <None Include="Assets\Imported\TGU Skybox Pack\Readme.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/Unity Projects/Realm Rush/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

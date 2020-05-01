@@ -18,8 +18,6 @@ public class EnemyMover : MonoBehaviour
         foreach (var waypoint in pathfinder.GetPath())
         {
             var enemyPos = waypoint.transform.position;
-            enemyPos.y = 10;
-            enemyPos.z += 5;
             transform.position = enemyPos;
             yield return new WaitForSeconds(1f);
         }
