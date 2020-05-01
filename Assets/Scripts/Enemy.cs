@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.IO;
 using UnityEngine;
 
-public class EnemyMover : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
+    [SerializeField] private int hitPoints = 3;
     private Pathfinder pathfinder;
     
     void Start()
@@ -22,11 +24,20 @@ public class EnemyMover : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
     }
-    
+
+    private void OnParticleCollision(GameObject other)
+    {
+        hitPoints -= 1;
+        if (hitPoints < 1)
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }

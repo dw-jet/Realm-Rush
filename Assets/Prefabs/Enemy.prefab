@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8972749499864720250}
   - component: {fileID: 2072717295141899942}
+  - component: {fileID: 2173243129577814635}
+  - component: {fileID: 6539702105172949535}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -44,6 +46,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f20fd49d74ecaa40a32c0e7c915d740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &2173243129577814635
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8520839406749215632}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.8513236, y: 10.374596, z: 5.54205}
+  m_Center: {x: 0.047873735, y: 4.687298, z: -0.026037455}
+--- !u!54 &6539702105172949535
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8520839406749215632}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &4282051899699335959
 PrefabInstance:
   m_ObjectHideFlags: 0
