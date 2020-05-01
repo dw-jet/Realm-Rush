@@ -58,10 +58,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CubeEditor.cs" />
-     <Compile Include="Assets\EnemyMover.cs" />
-     <Compile Include="Assets\Pathfinder.cs" />
-     <Compile Include="Assets\Waypoint.cs" />
+     <Compile Include="Assets\Scripts\CubeEditor.cs" />
+     <Compile Include="Assets\Scripts\EnemyMover.cs" />
+     <Compile Include="Assets\Scripts\Pathfinder.cs" />
+     <Compile Include="Assets\Scripts\Tower.cs" />
+     <Compile Include="Assets\Scripts\Waypoint.cs" />
      <None Include="Assets\Imported\TGU Skybox Pack\Readme.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>D:/Unity Projects/Realm Rush/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
