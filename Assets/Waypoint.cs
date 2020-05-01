@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
+    public bool isExplored = false;
+    public Waypoint exploredFrom;
     private Vector2Int gridPos;
     const int gridSize = 10;
 
@@ -16,19 +19,15 @@ public class Waypoint : MonoBehaviour
     {
         var pos = transform.position;
         return new Vector2Int(
-            Mathf.RoundToInt(pos.x / gridSize) * gridSize,
-            Mathf.RoundToInt(pos.z / gridSize) * gridSize
+            Mathf.RoundToInt(pos.x / gridSize),
+            Mathf.RoundToInt(pos.z / gridSize)
             );
     }
-    // Start is called before the first frame update
-    void Start()
+
+    public void SetTopColor(Color color)
     {
-        
+        var topMeshRenderer = transform.Find("Top").GetComponent<MeshRenderer>();
+        topMeshRenderer.material.color = color;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

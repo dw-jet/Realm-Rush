@@ -1,31 +1,30 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class EnemyMover : MonoBehaviour
 {
-    [SerializeField] private List<Waypoint> path;
-    // Start is called before the first frame update
+    private Pathfinder pathfinder;
+    
     void Start()
     {
-        // StartCoroutine(FollowPath());
+        pathfinder = FindObjectOfType<Pathfinder>();
+        StartCoroutine(FollowPath());
     }
 
+    
     IEnumerator FollowPath()
     {
-        print("Starting patron");
-        foreach (var waypoint in path)
+        foreach (var waypoint in pathfinder.GetPath())
         {
             var enemyPos = waypoint.transform.position;
-            print("Visiting block: " + waypoint.name);
             enemyPos.y = 10;
             enemyPos.z += 5;
             transform.position = enemyPos;
             yield return new WaitForSeconds(1f);
         }
-
-        print("Ending Patrol");
     }
+    
 
     // Update is called once per frame
     void Update()
