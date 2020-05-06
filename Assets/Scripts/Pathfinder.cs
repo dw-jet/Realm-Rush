@@ -76,12 +76,6 @@ public class Pathfinder : MonoBehaviour
         neighbor.exploredFrom = searchCenter;
     }
 
-    private void ColorStartAndEnd()
-    {
-        start.SetTopColor(Color.green);
-        end.SetTopColor(Color.red);
-    }
-
     private void LoadBlocks()
     {
         var waypoints = FindObjectsOfType<Waypoint>();
@@ -112,7 +106,6 @@ public class Pathfinder : MonoBehaviour
     private void CalculatePath()
     {
         LoadBlocks();
-        ColorStartAndEnd();
         BreadthFirstSearch();
         FormPath();
     }
