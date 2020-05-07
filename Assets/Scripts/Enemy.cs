@@ -4,6 +4,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int hitPoints = 3;
+    [SerializeField] private ParticleSystem hitParticlePrefab;
+    [SerializeField] private ParticleSystem deathParticlePrefab;
+
     private Pathfinder pathfinder;
     
     void Start()
@@ -26,16 +29,12 @@ public class Enemy : MonoBehaviour
     private void OnParticleCollision(GameObject other)
     {
         hitPoints -= 1;
+        hitParticlePrefab.Play();
         if (hitPoints < 1)
         {
+            var dfx = Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
+            dfx.Play();
             Destroy(gameObject);
         }
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
