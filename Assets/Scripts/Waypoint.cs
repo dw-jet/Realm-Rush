@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
@@ -8,7 +7,6 @@ public class Waypoint : MonoBehaviour
     private Vector2Int gridPos;
     const int gridSize = 10;
     public bool isPlaceable = true;
-    [SerializeField] private Tower towerPrefab;
 
     private void Awake()
     {
@@ -33,8 +31,7 @@ public class Waypoint : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && isPlaceable)
         {
-            Instantiate(towerPrefab, gameObject.transform);
-            isPlaceable = false;
+            FindObjectOfType<TowerFactory>().AddTower(this);
         }
     }
 }
