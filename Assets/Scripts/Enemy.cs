@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class Enemy : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class Enemy : MonoBehaviour
         {
             var dfx = Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
             dfx.Play();
+
+            Destroy(dfx.gameObject, dfx.main.duration);
             Destroy(gameObject);
         }
     }
